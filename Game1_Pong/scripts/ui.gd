@@ -1,4 +1,4 @@
-extends CanvasLayer
+extends Control
 
 @onready var player_score_label: Label = $Control/PlayerScore
 @onready var cpu_score_label: Label = $Control/CpuScore

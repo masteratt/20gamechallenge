@@ -22,4 +22,6 @@ position = Vector2(414, 385)
 [node name="BallStartArea" type="Marker2D" parent="."]
 position = Vector2(575, 314)
 
-[node name="UI" parent="." instance=ExtResource("5_mpygm")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("5_mpygm")]

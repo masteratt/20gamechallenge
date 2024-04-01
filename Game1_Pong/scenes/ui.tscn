@@ -4,11 +4,17 @@
 [ext_resource type="Script" path="res://scripts/ui.gd" id="1_gtbvx"]
 [ext_resource type="Texture2D" uid="uid://bfewaxm8jbfmr" path="res://assets/sprites/ScoreBar.png" id="2_rohju"]
 
-[node name="UI" type="CanvasLayer"]
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_gtbvx")
 
 [node name="Control" type="Control" parent="."]
-layout_mode = 3
+layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -19,11 +25,18 @@ size_flags_vertical = 4
 theme = ExtResource("1_7lvhp")
 
 [node name="PlayerScoreBar" type="Sprite2D" parent="Control"]
-position = Vector2(172, 24)
+position = Vector2(206, 29)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_rohju")
 
 [node name="PlayerScore" type="Label" parent="Control"]
 custom_minimum_size = Vector2(310, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.0512153
+anchor_top = 0.00154321
+anchor_right = 0.0512153
+anchor_bottom = 0.00154321
 offset_right = 310.0
 offset_bottom = 58.0
 text = "0"
@@ -31,7 +44,8 @@ horizontal_alignment = 2
 metadata/_edit_use_anchors_ = true
 
 [node name="CpuScoreBar" type="Sprite2D" parent="Control"]
-position = Vector2(981, 26)
+position = Vector2(948, 29)
+scale = Vector2(1.2, 1.2)
 texture = ExtResource("2_rohju")
 flip_h = true
 
@@ -51,8 +65,8 @@ layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -62.5
-offset_right = 62.5
-offset_bottom = 23.0
+offset_left = -83.0
+offset_right = 84.0
+offset_bottom = 58.0
 grow_horizontal = 2
 text = "Time Remaining"
