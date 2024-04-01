@@ -43,8 +43,8 @@ shape = SubResource("RectangleShape2D_m6mua")
 debug_color = Color(0.615686, 0.537255, 0.0705882, 0.419608)
 
 [node name="PlayerScoreZone" parent="." instance=ExtResource("4_g5hpa")]
-position = Vector2(3, 28)
+position = Vector2(3, 86)
 is_player_score_zone = true
 
 [node name="CpuScoreZone" parent="." instance=ExtResource("4_g5hpa")]
-position = Vector2(-1395, 28)
+position = Vector2(-1395, 83)
