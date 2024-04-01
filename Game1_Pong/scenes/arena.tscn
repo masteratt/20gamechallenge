@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4kr8jbw6jvtx"]
+
+[ext_resource type="Script" path="res://scripts/arena.gd" id="1_3b7yo"]
+[ext_resource type="Texture2D" uid="uid://cin88o7xhreeo" path="res://assets/sprites/Board.png" id="1_cul5d"]
+[ext_resource type="Texture2D" uid="uid://dm4kym3887n7a" path="res://assets/sprites/BlackBg.png" id="3_bwjn2"]
+[ext_resource type="PackedScene" uid="uid://df8ncx67jl52v" path="res://scenes/score_zone.tscn" id="4_g5hpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m6mua"]
+size = Vector2(1188, 66)
+
+[node name="Arena" type="Node2D"]
+script = ExtResource("1_3b7yo")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(-85, -32)
+scale = Vector2(1.62754, 1.5836)
+texture = ExtResource("3_bwjn2")
+centered = false
+
+[node name="Field" type="Sprite2D" parent="."]
+position = Vector2(61, 56)
+scale = Vector2(1.29011, 1.29011)
+texture = ExtResource("1_cul5d")
+centered = false
+
+[node name="BorderTop" type="StaticBody2D" parent="."]
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderTop"]
+position = Vector2(573, 23)
+shape = SubResource("RectangleShape2D_m6mua")
+debug_color = Color(0.615686, 0.537255, 0.0705882, 0.419608)
+
+[node name="BorderBottom" type="StaticBody2D" parent="."]
+position = Vector2(0, 652)
+collision_layer = 4
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BorderBottom"]
+position = Vector2(573, 23)
+shape = SubResource("RectangleShape2D_m6mua")
+debug_color = Color(0.615686, 0.537255, 0.0705882, 0.419608)
+
+[node name="PlayerScoreZone" parent="." instance=ExtResource("4_g5hpa")]
+position = Vector2(3, 28)
+is_player_score_zone = true
+
+[node name="CpuScoreZone" parent="." instance=ExtResource("4_g5hpa")]
+position = Vector2(-1395, 28)

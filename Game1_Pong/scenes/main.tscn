@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://c3pkduqmko4cy"]
+
+[ext_resource type="PackedScene" uid="uid://d4kr8jbw6jvtx" path="res://scenes/arena.tscn" id="1_yq2yi"]
+[ext_resource type="PackedScene" uid="uid://xv6f58tpbi4c" path="res://scenes/player.tscn" id="2_5yy0v"]
+[ext_resource type="PackedScene" uid="uid://blgfy7q878e0e" path="res://scenes/cpu.tscn" id="3_vnksp"]
+[ext_resource type="PackedScene" uid="uid://divioxlsxot7e" path="res://scenes/ball.tscn" id="4_mixc3"]
+[ext_resource type="PackedScene" uid="uid://c43eeasqp5hrv" path="res://scenes/ui.tscn" id="5_mpygm"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Arena" parent="." instance=ExtResource("1_yq2yi")]
+
+[node name="Player" parent="." instance=ExtResource("2_5yy0v")]
+position = Vector2(70, 326)
+
+[node name="CPU" parent="." instance=ExtResource("3_vnksp")]
+position = Vector2(1090, 320)
+
+[node name="Ball" parent="." instance=ExtResource("4_mixc3")]
+position = Vector2(414, 385)
+
+[node name="BallStartArea" type="Marker2D" parent="."]
+position = Vector2(575, 314)
+
+[node name="UI" parent="." instance=ExtResource("5_mpygm")]

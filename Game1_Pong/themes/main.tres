@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cy5s3y53iy341"]
+
+[ext_resource type="FontFile" uid="uid://bjcts8dkfbvnu" path="res://assets/fonts/Teko-VariableFont_wght.ttf" id="1_c14o0"]
+
+[resource]
+Label/font_sizes/font_size = 40
+Label/fonts/font = ExtResource("1_c14o0")

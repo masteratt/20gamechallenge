@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://blgfy7q878e0e"]
+
+[ext_resource type="Texture2D" uid="uid://d03k5gvqvsv73" path="res://assets/sprites/Computer.png" id="1_dpu80"]
+
+[node name="CPU" type="RigidBody2D"]
+collision_mask = 6
+gravity_scale = 0.0
+lock_rotation = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_dpu80")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(8.5, 60, -2, 58, -9, 50, -9, -49, -3, -57, 8.5, -60)
