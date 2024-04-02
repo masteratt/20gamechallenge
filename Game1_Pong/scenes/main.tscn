@@ -1,20 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://c3pkduqmko4cy"]
+[gd_scene load_steps=7 format=3 uid="uid://c3pkduqmko4cy"]
 
 [ext_resource type="PackedScene" uid="uid://d4kr8jbw6jvtx" path="res://scenes/arena.tscn" id="1_yq2yi"]
 [ext_resource type="PackedScene" uid="uid://xv6f58tpbi4c" path="res://scenes/player.tscn" id="2_5yy0v"]
 [ext_resource type="PackedScene" uid="uid://blgfy7q878e0e" path="res://scenes/cpu.tscn" id="3_vnksp"]
 [ext_resource type="PackedScene" uid="uid://divioxlsxot7e" path="res://scenes/ball.tscn" id="4_mixc3"]
 [ext_resource type="PackedScene" uid="uid://c43eeasqp5hrv" path="res://scenes/ui.tscn" id="5_mpygm"]
+[ext_resource type="PackedScene" uid="uid://cu1kglmsflerh" path="res://scenes/position_debug.tscn" id="6_3i42o"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Arena" parent="." instance=ExtResource("1_yq2yi")]
 
 [node name="Player" parent="." instance=ExtResource("2_5yy0v")]
-position = Vector2(70, 326)
+position = Vector2(30, 370)
 
 [node name="CPU" parent="." instance=ExtResource("3_vnksp")]
-position = Vector2(1090, 320)
+position = Vector2(1128, 370)
 
 [node name="Ball" parent="." instance=ExtResource("4_mixc3")]
 position = Vector2(414, 385)
@@ -25,3 +26,8 @@ position = Vector2(575, 314)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="UI" parent="CanvasLayer" instance=ExtResource("5_mpygm")]
+
+[node name="PlayerPosition" parent="CanvasLayer" node_paths=PackedStringArray("node_im_tracking") instance=ExtResource("6_3i42o")]
+offset_left = 8.0
+offset_right = 8.0
+node_im_tracking = NodePath("../../Player")

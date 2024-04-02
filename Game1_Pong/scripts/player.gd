@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
-var speed: float = 800
+var speed: float = 30
 
-func get_input() -> void:
+
+func _process(_delta: float) -> void:
+	velocity.x = 0 # Even with this the paddles moves back after colliding with ball in its corner.
 	if Input.is_action_pressed("up"):
 		velocity.y = -speed
 	elif Input.is_action_pressed("down"):
@@ -11,6 +13,5 @@ func get_input() -> void:
 		velocity.y = 0
 
 
-func _process(_delta: float) -> void:
-	get_input()
-	move_and_slide()
+func _physics_process(delta: float) -> void:
+	move_and_collide(velocity * speed * delta)
