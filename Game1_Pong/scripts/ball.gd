@@ -19,6 +19,8 @@ func start_ball() -> void:
 	linear_velocity = Vector2(x_force, y_force)
 
 func reset() -> void:
-	queue_free()	
-	var newCopy: Node = duplicate()
-	get_parent().add_child.bind(newCopy).call_deferred()
+	PhysicsServer2D.body_set_state(
+	get_rid(),
+	PhysicsServer2D.BODY_STATE_TRANSFORM,
+	Transform2D.IDENTITY.translated(Vector2(ball_start_area.global_position.x, ball_start_area.global_position.y)))
+	start_ball()
