@@ -21,5 +21,5 @@ func _physics_process(delta: float) -> void:
 func start_ball() -> void:
 	global_position = ball_start_area.global_position
 	randomize()
-	velocity.x = [-1, 1][randi() % 2] * initial_ball_speed
-	velocity.y = [-.8, .8][randi() % 2] * initial_ball_speed
+	velocity.x = [-1, 1].pick_random() * initial_ball_speed
+	velocity.y = [-.8, .8].pick_random() * initial_ball_speed
