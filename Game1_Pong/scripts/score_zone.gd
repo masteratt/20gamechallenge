@@ -15,4 +15,4 @@ func _on_body_entered(body: Node2D) -> void:
 	else:
 		GameMaster.cpu_score += 1
 	
-	ball.start_ball()
+	ball.reset()
