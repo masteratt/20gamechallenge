@@ -6,12 +6,11 @@ var speed_multiplier: float = 1.02
 
 var ball_speed: float = initial_ball_speed
 
-
 func _ready() -> void:
 	start_ball()
 	
 
-func _physics_process(delta: float) -> void:
+func _physics_process(delta: float) -> void:	
 	var collision: KinematicCollision2D = move_and_collide(velocity * ball_speed * delta)
 	
 	if (collision):

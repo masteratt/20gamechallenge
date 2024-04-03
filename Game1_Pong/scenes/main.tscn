@@ -14,8 +14,10 @@
 [node name="Player" parent="." instance=ExtResource("2_5yy0v")]
 position = Vector2(30, 370)
 
-[node name="CPU" parent="." instance=ExtResource("3_vnksp")]
+[node name="CPU" parent="." node_paths=PackedStringArray("ball") instance=ExtResource("3_vnksp")]
 position = Vector2(1128, 370)
+collision_mask = 4
+ball = NodePath("../Ball")
 
 [node name="Ball" parent="." instance=ExtResource("4_mixc3")]
 position = Vector2(414, 385)
