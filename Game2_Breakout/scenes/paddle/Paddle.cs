@@ -7,7 +7,7 @@ public partial class Paddle : CharacterBody2D
 
     public override void _Process(double delta)
     {
-        _inputDirection = Input.GetVector("left", "right", "ui_page_up", "ui_page_down");
+        _inputDirection = new Vector2(Input.GetActionStrength("right") - Input.GetActionStrength("left"), 0);
     }
 
     public override void _PhysicsProcess(double delta)
