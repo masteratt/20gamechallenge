@@ -32,6 +32,10 @@ gdscript/warnings/unsafe_call_argument=2
 
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Game1_Pong"
+
 [input]
 
 up={
