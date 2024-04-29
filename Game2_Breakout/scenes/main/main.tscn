@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp5mytybbdl3v"]
 
 [ext_resource type="PackedScene" uid="uid://qvw8t4nhu813" path="res://scenes/paddle/paddle.tscn" id="1_wft08"]
-[ext_resource type="PackedScene" uid="uid://dqenddtpj6ghk" path="res://scenes/wall.tscn" id="2_65ykl"]
-[ext_resource type="PackedScene" uid="uid://dc0pm2y8islhx" path="res://scenes/fps.tscn" id="3_cirp7"]
+[ext_resource type="PackedScene" uid="uid://dqenddtpj6ghk" path="res://scenes/environment/wall.tscn" id="2_65ykl"]
+[ext_resource type="PackedScene" uid="uid://bn1tpbjjjp0gi" path="res://scenes/ball/ball.tscn" id="3_1wv03"]
 
-[node name="Main" type="Node2D"]
+[node name="Main" type="Node"]
 
 [node name="Paddle" parent="." instance=ExtResource("1_wft08")]
 position = Vector2(1000, 956)
@@ -23,6 +23,5 @@ scale = Vector2(1, 0.61362)
 position = Vector2(693, -70)
 rotation = -1.5708
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="FPS" parent="CanvasLayer" instance=ExtResource("3_cirp7")]
+[node name="Ball" parent="." instance=ExtResource("3_1wv03")]
+position = Vector2(1037, 504)
