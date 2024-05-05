@@ -1,24 +1,44 @@
 using Godot;
 
-public partial class Ball : Area2D
+public partial class Ball : CharacterBody2D
 {
-    private Vector2 _velocity = new(0, 600);
+    private float _initialSpeed = 600;
+    private Vector2 _screenSize;
+    private Vector2 _velocity;
+
+    public override void _Ready()
+    {
+        _screenSize = GetViewportRect().Size;
+        _velocity = new Vector2(0, _initialSpeed);
+    }
 
     public override void _PhysicsProcess(double delta)
     {
-        Position += _velocity * (float)delta;
-    }
+        // Move the ball and get the collision information
+        var collision = MoveAndCollide(_velocity * (float)delta);
 
-    public void OnBallBodyEntered(Node2D area)
-    {
-        GD.Print("paddle");
+        // If the ball collided with a block or a paddle, adjust its velocity based on the collision normal
+        if (collision != null)
+        {
+            if (collision.GetCollider() is Block block)
+            {
+                if (Mathf.Abs(collision.GetNormal().X) > Mathf.Abs(collision.GetNormal().Y))
+                    // The ball hit the left or right side of the block
+                    _velocity.X = -_velocity.X;
+                else
+                    // The ball hit the top or bottom of the block
+                    _velocity.Y = -_velocity.Y;
+                block.QueueFree();
+            }
+            else if (collision.GetCollider() is Paddle paddle)
+            {
+                var hitPosition = (GlobalPosition.X - paddle.GlobalPosition.X) / (paddle.SpriteWidth / 2);
+                _velocity = new Vector2(hitPosition, -1).Normalized() * _initialSpeed;
+            }
+        }
 
-        if (area is not Paddle paddle) return;
-
-        // Calculate new direction based on where the ball hit the paddle
-        var hitPos = (GlobalPosition.X - paddle.GlobalPosition.X) /
-                     (paddle.GetNode<Sprite2D>("Sprite2D").Texture.GetWidth() / 2);
-        // Increase the speed of the ball after it hits the paddle
-        _velocity = new Vector2(hitPos, -1).Normalized() * 500; // Adjust this value as needed
+        // Check if the ball is out of bounds and adjust its velocity if necessary
+        if (Position.X < 0 || Position.X > _screenSize.X) _velocity.X = -_velocity.X;
+        if (Position.Y < 0) _velocity.Y = -_velocity.Y;
     }
 }

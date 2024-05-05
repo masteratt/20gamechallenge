@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de871ppqre0c8" path="res://art/paddle.png" id="2_i7fqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epl6m"]
-size = Vector2(106.694, 82.4059)
+size = Vector2(53.6193, 7.289)
 
 [node name="Paddle" type="CharacterBody2D"]
 collision_mask = 2
@@ -14,12 +14,11 @@ script = ExtResource("1_lwjfq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(2, 2)
 texture = ExtResource("2_i7fqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.75509e-06, -0.0638665)
+position = Vector2(2.41924e-05, -7.51406)
 rotation = -3.14159
-scale = Vector2(2.0888, -0.414142)
+scale = Vector2(2.0888, -0.415436)
 shape = SubResource("RectangleShape2D_epl6m")
 debug_color = Color(0, 0.635294, 0.415686, 0.419608)

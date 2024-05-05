@@ -1,27 +1,22 @@
 [gd_scene load_steps=4 format=3 uid="uid://dp5mytybbdl3v"]
 
 [ext_resource type="PackedScene" uid="uid://qvw8t4nhu813" path="res://scenes/paddle/paddle.tscn" id="1_wft08"]
-[ext_resource type="PackedScene" uid="uid://dqenddtpj6ghk" path="res://scenes/environment/wall.tscn" id="2_65ykl"]
 [ext_resource type="PackedScene" uid="uid://bn1tpbjjjp0gi" path="res://scenes/ball/ball.tscn" id="3_1wv03"]
+[ext_resource type="PackedScene" uid="uid://xbmtqxgfbols" path="res://scenes/block_generator/block_generator.tscn" id="3_euy3w"]
 
 [node name="Main" type="Node"]
 
 [node name="Paddle" parent="." instance=ExtResource("1_wft08")]
-position = Vector2(1000, 956)
-
-[node name="Walls" type="Node" parent="."]
-
-[node name="Left" parent="Walls" instance=ExtResource("2_65ykl")]
-position = Vector2(-14, 343)
-scale = Vector2(1, 0.61362)
-
-[node name="Right" parent="Walls" instance=ExtResource("2_65ykl")]
-position = Vector2(1986, 343)
-scale = Vector2(1, 0.61362)
-
-[node name="Top" parent="Walls" instance=ExtResource("2_65ykl")]
-position = Vector2(693, -70)
-rotation = -1.5708
+position = Vector2(656, 591)
 
 [node name="Ball" parent="." instance=ExtResource("3_1wv03")]
-position = Vector2(1037, 504)
+position = Vector2(672, 462)
+
+[node name="BlockGenerator" parent="." instance=ExtResource("3_euy3w")]
+scale = Vector2(1, 1.00614)
+_blockOffset = Vector2(150, 100)
+_columns = 5
+
+[node name="BlockGenerator2" parent="." instance=ExtResource("3_euy3w")]
+_blockOffset = Vector2(550, 100)
+_columns = 5

@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://xbmtqxgfbols"]
+
+[ext_resource type="Script" path="res://scenes/block_generator/BlockGenerator.cs" id="1_01hpn"]
+[ext_resource type="PackedScene" uid="uid://c6155gkaiawg3" path="res://scenes/block/block.tscn" id="2_qqk2d"]
+
+[node name="BlockGenerator" type="Node2D"]
+script = ExtResource("1_01hpn")
+_blockScene = ExtResource("2_qqk2d")

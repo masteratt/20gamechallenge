@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6155gkaiawg3"]
+
+[ext_resource type="Script" path="res://scenes/block/Block.cs" id="1_5y4oi"]
+[ext_resource type="Texture2D" uid="uid://dm0w5mh1y8lol" path="res://art/blocks.png" id="1_d56ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8x67m"]
+size = Vector2(20.5529, 20)
+
+[node name="Block" type="StaticBody2D"]
+collision_layer = 4
+collision_mask = 8
+script = ExtResource("1_5y4oi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_d56ed")
+hframes = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.43051e-06, 0)
+scale = Vector2(3.01125, 1.39003)
+shape = SubResource("RectangleShape2D_8x67m")
+debug_color = Color(0.831373, 0.34902, 0.482353, 0.419608)
