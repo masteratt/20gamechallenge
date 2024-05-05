@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://de871ppqre0c8" path="res://art/paddle.png" id="2_i7fqx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epl6m"]
-size = Vector2(53.6193, 7.289)
+size = Vector2(53.6193, 43.3957)
 
 [node name="Paddle" type="CharacterBody2D"]
 collision_mask = 8
@@ -15,7 +15,7 @@ texture_filter = 1
 texture = ExtResource("2_i7fqx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.41924e-05, -7.51406)
+position = Vector2(5.17853e-06, -0.0140553)
 rotation = -3.14159
 scale = Vector2(2.0888, -0.415436)
 shape = SubResource("RectangleShape2D_epl6m")

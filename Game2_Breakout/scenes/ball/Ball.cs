@@ -14,10 +14,10 @@ public partial class Ball : RigidBody2D
         LinearVelocity = _velocity; // Set initial velocity
     }
 
-    public override void _PhysicsProcess(double delta)
+    public override void _IntegrateForces(PhysicsDirectBodyState2D state)
     {
         // Move the ball and get the collision information
-        var collision = MoveAndCollide(_velocity * (float)delta);
+        var collision = MoveAndCollide(_velocity * state.Step);
 
         // If the ball collided with a block, adjust its velocity based on the collision normal
         if (collision != null)
@@ -45,7 +45,9 @@ public partial class Ball : RigidBody2D
         if (Position.Y < 0)
             _velocity.Y = -_velocity.Y;
 
-        LinearVelocity = _velocity; // Update the ball's LinearVelocity with the new velocity vector
-        LinearVelocity = LinearVelocity.Normalized() * _initialSpeed; // Ensure the ball's speed remains constant
+        // Update the ball's LinearVelocity with the new velocity vector
+        state.LinearVelocity = _velocity;
+        // Ensure the ball's speed remains constant
+        state.LinearVelocity = state.LinearVelocity.Normalized() * _initialSpeed;
     }
 }
