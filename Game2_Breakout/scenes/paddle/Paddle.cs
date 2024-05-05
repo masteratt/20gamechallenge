@@ -1,6 +1,6 @@
 using Godot;
 
-public partial class Paddle : StaticBody2D
+public partial class Paddle : CharacterBody2D
 {
     private float _adjustedSpriteWidth;
     private Vector2 _inputDirection;
