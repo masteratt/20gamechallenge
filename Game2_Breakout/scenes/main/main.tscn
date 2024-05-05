@@ -10,13 +10,15 @@
 position = Vector2(656, 591)
 
 [node name="Ball" parent="." instance=ExtResource("3_1wv03")]
-position = Vector2(672, 462)
+position = Vector2(659, 385)
 
 [node name="BlockGenerator" parent="." instance=ExtResource("3_euy3w")]
 scale = Vector2(1, 1.00614)
 _blockOffset = Vector2(150, 100)
+_blockSpacing = Vector2(1, 1)
 _columns = 5
 
 [node name="BlockGenerator2" parent="." instance=ExtResource("3_euy3w")]
 _blockOffset = Vector2(550, 100)
+_blockSpacing = Vector2(1, 1)
 _columns = 5

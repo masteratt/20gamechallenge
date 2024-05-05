@@ -6,10 +6,8 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_epl6m"]
 size = Vector2(53.6193, 7.289)
 
-[node name="Paddle" type="CharacterBody2D"]
-collision_mask = 2
-motion_mode = 1
-slide_on_ceiling = false
+[node name="Paddle" type="StaticBody2D"]
+collision_mask = 8
 script = ExtResource("1_lwjfq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

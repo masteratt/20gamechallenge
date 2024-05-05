@@ -1,11 +1,11 @@
 using Godot;
 
-public partial class Paddle : CharacterBody2D
+public partial class Paddle : StaticBody2D
 {
     private float _adjustedSpriteWidth;
     private Vector2 _inputDirection;
-    private Vector2 _screenSize;
     [Export] private float _moveSpeed = 1000f;
+    private Vector2 _screenSize;
 
     public float SpriteWidth => GetNode<Sprite2D>("Sprite2D").Texture.GetWidth();
 
@@ -24,9 +24,7 @@ public partial class Paddle : CharacterBody2D
     public override void _PhysicsProcess(double delta)
     {
         var newVelocity = _inputDirection * _moveSpeed;
-        newVelocity.Y = 0; // Ensure the paddle never moves on the y axis
-        Velocity = newVelocity;
-        MoveAndSlide();
+        Position += newVelocity * (float)delta;
 
         // Check if the paddle is out of bounds and adjust its position if necessary
         if (Position.X - _adjustedSpriteWidth / 2 < 0)
